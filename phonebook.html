@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Phonebook</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    
+    /* === BASE HEADING === */ 
+  h1 {
+    position: relative;
+    padding: 0;
+    margin: 0;
+    font-family: "Raleway", sans-serif;
+    font-weight: 300;
+    font-size: 40px;
+    color: #080808;
+    -webkit-transition: all 0.4s ease 0s;
+    -o-transition: all 0.4s ease 0s;
+    transition: all 0.4s ease 0s;
+  }
+  
+  h1 span {
+    display: block;
+    font-size: 0.5em;
+    line-height: 1.3;
+  }
+  h1 em {
+    font-style: normal;
+    font-weight: 600;
+  }
+  
+  /* Style 9
+   ----------------------------- */
+.nine h1 {
+  text-align:center; font-size:50px; text-transform:uppercase; color:#222; letter-spacing:1px;
+  font-family:"Playfair Display", serif; font-weight:400; margin-top:80px;
+}
+.nine h1 span {
+  margin-top: 5px;
+    font-size:15px; color:#444; word-spacing:1px; font-weight:normal; letter-spacing:2px;
+    text-transform: uppercase; font-family:"Raleway", sans-serif; font-weight:500;
+
+    display: grid;
+    grid-template-columns: 1fr max-content 1fr;
+    grid-template-rows: 27px 0;
+    grid-gap: 20px;
+    align-items: center;
+}
+
+.nine h1 span:after,.nine h1 span:before {
+    content: " ";
+    display: block;
+    border-bottom: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+    height: 5px;
+  background-color:#f8f8f8;
+}
+/* Style 8
+   ----------------------------- */
+   .eight h1 {
+    margin-top: 50px; 
+    text-align:center;
+   
+    text-transform:uppercase;
+    font-size:26px; letter-spacing:1px;
+    
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    grid-template-rows: 16px 0;
+    grid-gap: 22px;
+  }
+  
+  .eight h1:after,.eight h1:before {
+    content: " ";
+    display: block;
+    border-bottom: 2px solid #ccc;
+    background-color:#f8f8f8;
+  }
+  
+    /* Custom CSS */
+    .contact-table {
+      border: 1px solid #ddd;
+      border-radius: 0.25rem;
+      padding: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .contact-table thead th {
+      border-right: 1px solid #ddd;
+      background-color: #007bff;;
+      color: #fff;
+      padding: 10px;
+    }
+
+    .contact-table tbody td {
+      border-right: 1px solid #ddd;
+      padding: 10px;
+    }
+
+    .contact-table tbody tr {
+      border-bottom: 1px solid #ddd;
+    }
+
+    .contact-table thead th:last-child,
+    .contact-table tbody td:last-child {
+      border-right: none;
+    }
+
+    .form-control {
+    margin: 2%;
+    }
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
+    *{  
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+  }
+  body{
+    background: url("img/Bg1.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    overflow: scroll;
+}
+  .wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+
+}
+.nav{
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    height: 100px;
+    line-height: 100px;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), transparent);
+    z-index: 100;
+}
+.nav-logo p a{
+    color: rgb(245, 244, 244);
+    font-size: 25px;
+    font-weight: 600;
+}
+.nav-menu ul{
+    display: flex;
+}
+.nav-menu ul li{
+    list-style-type: none;
+}
+.nav-menu ul li .link{
+    text-decoration: none;
+    font-weight: 500;
+    color: #f7f6f6;
+    padding-bottom: 15px;
+    margin: 0 25px;
+}
+.link:hover, .active{
+    border-bottom: 2px solid #fff;
+}
+.nav-button .btn{
+    width: 130px;
+    height: 40px;
+    font-weight: 500;
+    background: rgba(255, 255, 255, 0.4);
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: .3s ease;
+}
+.btn:hover{
+    background: rgba(255, 255, 255, 0.3);
+}
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <nav class="nav">
+        <div class="nav-logo">
+            <p><a href="index.php">N</a></p>
+        </div>
+        <div class="nav-menu" id="navMenu">
+            <ul>
+                <li><a href="index.php#home" class="link active">Home</a></li>
+                <li><a href="index.php#about" class="link">About</a></li>
+                <li><a href="index.php#services" class="link">Services</a></li>
+                <li><a href="index.php#work" class="link">Work</a></li>
+                <li><a href="index.php#contact" class="link">Contact</a></li>
+                <li><a href="logout.php" class="link">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+  <div class="container">
+    <div class="nine">
+    <h1 class="text-center">Phonebook</h1>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <form id="contactForm">
+          <input type="hidden" id="contactId">
+          <div class="form-group" style = "width: 300px;">
+            <label for="firstName">First Name:</label>
+            <input type="text" class="form-control" id="firstName" placeholder="Enter first name">
+          </div>
+          <div class="form-group" style = "width: 300px;>
+            <label for="lastName">Last Name:</label>
+            <input type="text" class="form-control" id="lastName" placeholder="Enter last name">
+          </div>
+          <div class="form-group" style = "width: 300px;>
+            <label for="middleName">Middle Name:</label>
+            <input type="text" class="form-control" id="middleName" placeholder="Enter middle name">
+          </div>
+          <div class="form-group" style = "width: 300px;>
+            <label for="address">Address:</label>
+            <input type="text" class="form-control" id="address" placeholder="Enter address">
+          </div>
+          <div class="form-group" style = "width: 300px;>
+            <label for="phoneNumber">Phone Number:</label>
+            <input type="text" class="form-control" id="phoneNumber" placeholder="Enter phone number">
+          </div>
+          <div class="form-group" style = "width: 300px;>
+            <label for="email">Email:</label>
+            <input type="email" class="form-control" id="email" placeholder="Enter email">
+          </div>
+          <div class="form-group" style = "width: 300px;>
+            <label for="notes">Notes:</label>
+            <textarea class="form-control" id="notes" placeholder="Enter notes"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Save</button>
+        </form>
+      </div>
+      <div class="col-md-6">
+        <div class="eight">
+        <h1 class="text-center">Contact List</h1>
+        </div>
+        <input type="text" class="form-control" id="searchInput" placeholder="Search">
+        <ul id="contactList" class="list-group" style="display: -ms-flexbox;
+        
+        display: flex;
+        -ms-flex-direction: column;
+        flex-direction: row-reverse;
+        padding-left: 0;
+        margin-bottom: 0;
+        border-radius: 0.25rem;
+        flex-wrap: nowrap;
+        justify-content: center; margin-right: 69px;"></ul>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.0/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <script src="script.js"></script>
+
+  
+</body>
+</html>
